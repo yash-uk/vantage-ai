@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 type Turn = { who: "user" | "ai"; text: string };
 
@@ -16,34 +15,42 @@ const convo: Turn[] = [
 ];
 
 export default function ChatDemo() {
-  const [shown, setShown] = useState<Turn[]>([]);
+  const [shownCount, setShownCount] = useState(0);
   const [status, setStatus] = useState("connecting…");
 
   useEffect(() => {
-    let i = 0;
     let cancelled = false;
+    const timers: ReturnType<typeof setTimeout>[] = [];
 
-    function playNext() {
+    function playNext(index: number) {
       if (cancelled) return;
-      if (i >= convo.length) {
+      if (index >= convo.length) {
         setStatus("appointment confirmed");
         return;
       }
-      setStatus(convo[i].who === "ai" ? "AI is typing…" : "customer typing…");
-      setTimeout(() => {
-        if (cancelled) return;
-        setShown((prev) => [...prev, convo[i]]);
-        i++;
-        setTimeout(playNext, 900);
-      }, 1000);
+      const turn = convo[index];
+      if (!turn) return;
+
+      setStatus(turn.who === "ai" ? "AI is typing…" : "customer typing…");
+
+      timers.push(
+        setTimeout(() => {
+          if (cancelled) return;
+          setShownCount((count) => Math.max(count, index + 1));
+          timers.push(setTimeout(() => playNext(index + 1), 900));
+        }, 1000)
+      );
     }
 
-    const start = setTimeout(playNext, 600);
+    timers.push(setTimeout(() => playNext(0), 600));
+
     return () => {
       cancelled = true;
-      clearTimeout(start);
+      timers.forEach(clearTimeout);
     };
   }, []);
+
+  const visibleTurns = convo.slice(0, shownCount);
 
   return (
     <div className="relative">
@@ -62,23 +69,18 @@ export default function ChatDemo() {
         </div>
 
         <div className="space-y-3 text-sm min-h-[220px]">
-          <AnimatePresence>
-            {shown.map((turn, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className={
-                  turn.who === "ai"
-                    ? "bg-gradient-to-r from-blue/20 to-purple/20 border border-blue/30 rounded-xl rounded-tl-sm px-4 py-2.5 max-w-[85%]"
-                    : "bg-white/10 rounded-xl rounded-tr-sm px-4 py-2.5 max-w-[85%] ml-auto"
-                }
-              >
-                {turn.text}
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {visibleTurns.map((turn, idx) => (
+            <div
+              key={idx}
+              className={
+                turn.who === "ai"
+                  ? "bg-gradient-to-r from-blue/20 to-purple/20 border border-blue/30 rounded-xl rounded-tl-sm px-4 py-2.5 max-w-[85%] animate-[fadeIn_0.3s_ease]"
+                  : "bg-white/10 rounded-xl rounded-tr-sm px-4 py-2.5 max-w-[85%] ml-auto animate-[fadeIn_0.3s_ease]"
+              }
+            >
+              {turn.text}
+            </div>
+          ))}
         </div>
 
         <div className="mt-4 flex items-center gap-2 text-xs text-dim">
