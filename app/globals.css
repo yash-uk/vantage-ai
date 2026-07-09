@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: #fbf7ef;
+  color: #2b211a;
+}
+::selection {
+  background: #7c2d3b;
+  color: #fbf7ef;
+}
+
+.grad-text {
+  background: linear-gradient(90deg, #7c2d3b, #a8433f 55%, #c9972e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.glass {
+  background: #fffdf8;
+  border: 1px solid #e8decd;
+  box-shadow: 0 1px 2px rgba(43, 33, 26, 0.05);
+}
+.glass-dark {
+  background: #241a17;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+.grid-bg {
+  background-image: linear-gradient(rgba(43, 33, 26, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 33, 26, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 90%);
+}
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.02;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7c2d3b;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.navlink {
+  position: relative;
+}
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: linear-gradient(90deg, #7c2d3b, #c9972e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.navlink:hover::after {
+  transform: scaleX(1);
+}
+
+.card-hover {
+  transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(124, 45, 59, 0.35);
+  box-shadow: 0 20px 50px -22px rgba(124, 45, 59, 0.3);
+}
+
+input,
+textarea {
+  background: #f3ecdd;
+  border: 1px solid #e8decd;
+  color: #2b211a;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #9c917f;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #7c2d3b;
+}
