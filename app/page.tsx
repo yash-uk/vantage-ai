@@ -1,12 +1,13 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import TrustBar from "@/components/TrustBar";
 import WorkflowAnimation from "@/components/WorkflowAnimation";
 import LogoBar from "@/components/LogoBar";
 import Stats from "@/components/Stats";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
 import CaseStudies from "@/components/CaseStudies";
-import BeforeAfter from "@/components/BeforeAfter";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import ROICalculator from "@/components/ROICalculator";
 import CustomAutomation from "@/components/CustomAutomation";
 import Testimonials from "@/components/Testimonials";
@@ -19,13 +20,14 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
+      <TrustBar />
       <WorkflowAnimation />
       <LogoBar />
       <Stats />
       <Services />
       <Industries />
       <CaseStudies />
-      <BeforeAfter />
+      <WhyChooseUs />
       <ROICalculator />
       <CustomAutomation />
       <Testimonials />

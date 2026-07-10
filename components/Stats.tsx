@@ -2,10 +2,10 @@ import Counter from "./Counter";
 import Reveal from "./Reveal";
 
 const stats = [
-  { value: "24/7", label: "AI availability", isCounter: false },
-  { value: 99, label: "Response rate", suffix: "%", isCounter: true },
-  { value: 10000, label: "Calls automated", suffix: "+", isCounter: true },
-  { value: "5 min", label: "Average setup time", isCounter: false },
+  { value: 99.9, label: "AI availability", suffix: "%", isCounter: true },
+  { value: "24/7", label: "Call answering", isCounter: false },
+  { value: 60, label: "Fewer missed calls*", suffix: "%", isCounter: true },
+  { value: "<1 min", label: "Average response time", isCounter: false },
 ];
 
 export default function Stats() {
@@ -32,6 +32,9 @@ export default function Stats() {
             ))}
           </>
         </Reveal>
+        <p className="text-center text-xs text-dim mt-8">
+          *Illustrative example based on typical results — ask us for figures specific to your business.
+        </p>
       </div>
     </section>
   );

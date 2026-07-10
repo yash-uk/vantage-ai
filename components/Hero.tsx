@@ -12,7 +12,7 @@ export default function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-mono uppercase tracking-wider text-dim mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-blue animate-pulse" />
-            AI Solutions for Modern Businesses
+            AI Growth Solutions for Modern Businesses
           </div>
           <h1 className="font-display font-bold text-5xl sm:text-6xl leading-[1.05] tracking-tight mb-6">
             Turn every missed call
