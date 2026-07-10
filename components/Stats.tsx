@@ -1,0 +1,38 @@
+import Counter from "./Counter";
+import Reveal from "./Reveal";
+
+const stats = [
+  { value: "24/7", label: "AI availability", isCounter: false },
+  { value: 99, label: "Response rate", suffix: "%", isCounter: true },
+  { value: 10000, label: "Calls automated", suffix: "+", isCounter: true },
+  { value: "5 min", label: "Average setup time", isCounter: false },
+];
+
+export default function Stats() {
+  return (
+    <section className="py-20 border-t border-line">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <Reveal className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <>
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <div className="font-display font-bold text-3xl sm:text-4xl grad-text">
+                  {stat.isCounter ? (
+                    <Counter
+                      target={stat.value as number}
+                      suffix={stat.suffix}
+                      className="grad-text"
+                    />
+                  ) : (
+                    stat.value
+                  )}
+                </div>
+                <p className="text-sm text-dim mt-2">{stat.label}</p>
+              </div>
+            ))}
+          </>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

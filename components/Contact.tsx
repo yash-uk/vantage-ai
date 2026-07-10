@@ -52,7 +52,7 @@ export default function Contact() {
             </p>
             <div className="space-y-4 text-sm">
               <div className="flex items-center gap-3 text-dim">
-                <span className="text-ink font-medium">Email</span> hello@vantageai.co
+                <span className="text-ink font-medium">Email</span> hello@aivora.ai
               </div>
               <div className="flex items-center gap-3 text-dim">
                 <span className="text-ink font-medium">Phone</span> (555) 019-2244
@@ -115,7 +115,7 @@ export default function Contact() {
             )}
             {status === "error" && (
               <p className="text-xs text-center text-blue">
-                Something went wrong sending that. Please email hello@vantageai.co directly.
+                Something went wrong sending that. Please email hello@aivora.ai directly.
               </p>
             )}
           </form>

@@ -12,17 +12,16 @@ export default function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-mono uppercase tracking-wider text-dim mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-blue animate-pulse" />
-            AI systems for local & service businesses
+            AI Solutions for Modern Businesses
           </div>
           <h1 className="font-display font-bold text-5xl sm:text-6xl leading-[1.05] tracking-tight mb-6">
-            Never miss
+            Turn every missed call
             <br />
-            another <span className="grad-text">lead</span> again.
+            into a <span className="grad-text">paying customer</span>.
           </h1>
           <p className="text-dim text-lg leading-relaxed max-w-lg mb-10">
-            Vantage builds the AI receptionists, chatbots, and automation your business needs to
-            answer every call, book every appointment, and follow up before your competitors even
-            see the message.
+            Your AI employees answer, qualify, and book every lead — nights, weekends, and the
+            moment a call comes in. No more lost revenue while your team is busy, closed, or asleep.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a

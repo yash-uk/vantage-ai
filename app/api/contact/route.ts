@@ -14,13 +14,13 @@ export async function POST(req: NextRequest) {
     }
 
     const apiKey = process.env.RESEND_API_KEY;
-    const toAddress = process.env.CONTACT_TO_EMAIL || "hello@vantageai.co";
+    const toAddress = process.env.CONTACT_TO_EMAIL || "hello@aivora.ai";
 
     if (apiKey) {
       const { Resend } = await import("resend");
       const resend = new Resend(apiKey);
       await resend.emails.send({
-        from: process.env.CONTACT_FROM_EMAIL || "Vantage AI Site <onboarding@resend.dev>",
+        from: process.env.CONTACT_FROM_EMAIL || "Aivora AI Site <onboarding@resend.dev>",
         to: toAddress,
         reply_to: email,
         subject: `New strategy call request from ${name}`,

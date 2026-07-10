@@ -3,7 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
-export default function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
+export default function Counter({
+  target,
+  suffix = "",
+  className = "text-ink font-display font-semibold text-xl",
+}: {
+  target: number;
+  suffix?: string;
+  className?: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
   const [value, setValue] = useState(0);
@@ -24,7 +32,7 @@ export default function Counter({ target, suffix = "" }: { target: number; suffi
   }, [inView, target]);
 
   return (
-    <span ref={ref} className="text-ink font-display font-semibold text-xl">
+    <span ref={ref} className={className}>
       {value}
       {suffix}
     </span>

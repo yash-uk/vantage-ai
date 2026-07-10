@@ -61,7 +61,7 @@ export default function ChatDemo() {
               AI
             </div>
             <div>
-              <div className="text-sm font-medium">Vantage Receptionist</div>
+              <div className="text-sm font-medium">Aivora Receptionist</div>
               <div className="text-xs text-dim">Northline Dental — live</div>
             </div>
           </div>

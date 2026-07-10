@@ -7,7 +7,7 @@ const links = [
   { href: "#services", label: "Services" },
   { href: "#industries", label: "Industries" },
   { href: "#work", label: "Work" },
-  { href: "#custom", label: "Custom Automation" },
+  { href: "#calculator", label: "ROI Calculator" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -30,7 +30,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between py-4">
         <a href="#top" className="font-display font-bold text-xl tracking-tight flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-blue to-purple" />
-          Vantage <span className="grad-text">AI</span>
+          Aivora <span className="grad-text">AI</span>
         </a>
         <nav className="hidden lg:flex items-center gap-8 font-body text-sm text-dim">
           {links.map((l) => (

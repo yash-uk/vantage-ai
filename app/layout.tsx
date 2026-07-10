@@ -21,16 +21,16 @@ const jbmono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://www.vantageai.co"; // TODO: replace with your real production domain
+const siteUrl = "https://www.aivora.ai"; // TODO: replace with your real production domain
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vantage AI — Growth Systems for Local Businesses",
-    template: "%s | Vantage AI",
+    default: "Aivora AI — AI Solutions for Modern Businesses",
+    template: "%s | Aivora AI",
   },
   description:
-    "Vantage builds AI receptionists, chatbots, and automation that answer every call, book every appointment, and follow up before your competitors even see the message.",
+    "Aivora builds AI receptionists, chatbots, and automation that answer every call, book every appointment, and follow up before your competitors even see the message.",
   keywords: [
     "AI receptionist",
     "AI chatbot for local business",
@@ -39,17 +39,17 @@ export const metadata: Metadata = {
     "CRM automation",
   ],
   openGraph: {
-    title: "Vantage AI — Growth Systems for Local Businesses",
+    title: "Aivora AI — AI Solutions for Modern Businesses",
     description:
       "AI receptionists, chatbots, and automation that answer every call and book every appointment.",
     url: siteUrl,
-    siteName: "Vantage AI",
+    siteName: "Aivora AI",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Vantage AI" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Aivora AI" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vantage AI — Growth Systems for Local Businesses",
+    title: "Aivora AI — AI Solutions for Modern Businesses",
     description:
       "AI receptionists, chatbots, and automation that answer every call and book every appointment.",
     images: ["/og-image.png"],

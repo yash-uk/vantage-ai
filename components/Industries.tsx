@@ -15,12 +15,13 @@ export default function Industries() {
         </Reveal>
         <Reveal className="grid grid-cols-2 md:grid-cols-5 gap-3">
           <>
-            {industries.map((name) => (
+            {industries.map((industry) => (
               <div
-                key={name}
-                className="glass card-hover rounded-xl px-5 py-6 text-center text-sm font-medium"
+                key={industry.name}
+                className="glass card-hover rounded-xl px-5 py-7 text-center"
               >
-                {name}
+                <div className="text-2xl mb-3">{industry.icon}</div>
+                <p className="text-sm font-medium">{industry.name}</p>
               </div>
             ))}
           </>
